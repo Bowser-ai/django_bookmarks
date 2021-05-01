@@ -1,2 +1,2 @@
-from .userlogin import UserLogin
-
+from .dashboard import Dashboard
+from .customlogoutview import CustomLogoutView
