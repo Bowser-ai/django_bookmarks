@@ -1,21 +1,19 @@
-{% extends 'base.html' %}
+{% extends 'registration/base_form.html' %}
 
 {% block title %}Log in{% endblock %}
 
-{% block content %}
-    <h1>Log-in</h1>
-    {% if form.errors %}
-        <p>
+{% block form_title %}Log in{% endblock %}
+{% block error_msg %}
+    <p>
         Your username and password didn't match.
         Please try again.
-        </p>
-{% else %}
-    <p>Please, use the following form to log in</p>
-    <form method="POST">
-        {{ form.as_p }}
-        {%  csrf_token %}
-        <input type="hidden" name="next" value="{{ next }}" />
-        <p><input type="submit" value="Log in"></p>
-    </form>
-{% endif %}
+    </p>
+{% endblock %}
+{% block form_subtitle %}
+    <p>Please use this form to login</p>
+{% endblock %}
+{% block form %}
+    {% with submit_value="Submit" form_method="post" %}
+    {{ block.super }}
+    {% endwith %}
 {% endblock %}
