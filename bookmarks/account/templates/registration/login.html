@@ -16,4 +16,5 @@
     {% with submit_value="Submit" form_method="post" %}
     {{ block.super }}
     {% endwith %}
+    <a href="{% url "password_reset" %}">Forgotten password? Click here to reset</a>
 {% endblock %}
